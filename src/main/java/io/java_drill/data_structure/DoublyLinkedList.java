@@ -1,20 +1,21 @@
 package io.java_drill.data_structure;
 
 public class DoublyLinkedList<T> {
-    public Node<T> head;
-    public Node<T> tail;
+    public Node<T> head;    // 가장 앞의 node
+    public Node<T> tail;    // 가장 뒤의 node
 
+    // 내장 객체 node
     public class Node<T>{
         T data;
-        Node<T> prev;
-        Node<T> next;
+        Node<T> prev;   // 앞 node의 pointer
+        Node<T> next;   // 뒤 node의 pointer
 
-        public Node(T data) {
+        public Node(T data) {   // 생성자
             this.data = data;
         }
     }
 
-    // add new Node to tail
+    // 맨 끝에 node 추가하기
     public void addNode(T data) {
         if(this.head == null){
             this.head = new Node<>(data);
@@ -30,7 +31,7 @@ public class DoublyLinkedList<T> {
         }
     }
 
-    // find item from head
+    // head에서 특정 값 찾기
     public T findFromHead(T data) {
         if(this.head != null) {
             Node<T> node = head;
@@ -46,7 +47,7 @@ public class DoublyLinkedList<T> {
         return null;
     }
 
-    // find item from tail
+    // 맨 뒤 node에서 특정 값 찾기
     public T findFromTail(T data) {
         if(this.tail != null) {
             Node<T> node = this.tail;
