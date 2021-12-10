@@ -10,21 +10,37 @@ import java.util.ArrayList;
  * O(logN)
  */
 public class BinarySearch {
-    public boolean sort(ArrayList<Integer> list, Integer target){
+    public int sort(ArrayList<Integer> list, Integer target){
+        // 특수 케이스
+        // 배열의 값이 하나일 경우
         if(list.size() == 1 && list.get(0) == target){
-            return true;
+            return 0;   // 발견되었을 때 index = 0;
         }if(list.size() == 1 && list.get(0) != target){
-            return false;
+            return -1;  // 발견되지 않는다면,
         }
 
+        // 배열의 값이 2개 이상일 경우
         int mid = list.size() / 2;
         if(list.get(mid) == target){
-            return true;
+            return mid;
         } else {
+            int result; // 발견 여부
             if (target < list.get(mid)) {
-                return sort(new ArrayList<>(list.subList(0, mid)), target);
+                result = sort(new ArrayList<>(list.subList(0, mid)), target);
+                if(result > -1){
+                    mid = result;
+                    return mid;
+                } else {
+                    return -1;
+                }
             } else {
-                return sort(new ArrayList<>(list.subList(mid, list.size())), target);
+                result = sort(new ArrayList<>(list.subList(mid, list.size())), target);
+                if(result > -1){
+                    mid += result;
+                    return mid;
+                } else{
+                    return -1;
+                }
             }
         }
     }
@@ -32,7 +48,7 @@ public class BinarySearch {
     public static void main(String[] args) {
         BinarySearch bs = new BinarySearch();
         ArrayList<Integer> testList = new ArrayList<>();
-        for(int i = 0; i < 20; i ++){
+        for(int i = 0; i < 30; i ++){
             testList.add((int) (Math.random() * 30));
         }
         System.out.println(testList);
