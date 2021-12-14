@@ -27,7 +27,16 @@ public class Kruskal {
         }
         @Override
         public int compareTo(Edge o) {
-            return this.weight = o.weight;  // 가중치로 오름차순
+            return this.weight - o.weight;  // 가중치로 오름차순
+        }
+
+        @Override
+        public String toString() {
+            return "Edge{" +
+                    "weight=" + weight +
+                    ", nodeS='" + nodeS + '\'' +
+                    ", nodeE='" + nodeE + '\'' +
+                    '}';
         }
     }
 
@@ -38,7 +47,7 @@ public class Kruskal {
     public String find(String node) {
         // parh compression 기법을 이용(루트를 같게 만듦)
         if(parentNode.get(node) != node) {  // 부모가 자신과 같지 않다면, 루트가 아님
-            parentNode.put(node, find(node));   // 재귀를 통해 부모의 부모로 갱신 => 루트 노드가 같아짐
+            parentNode.put(node, find(parentNode.get(node)));   // 재귀를 통해 부모의 부모로 갱신 => 루트 노드가 같아짐
         }
         return parentNode.get(node);    // 최종 부모 노드는 루트
     }
@@ -62,6 +71,7 @@ public class Kruskal {
         parentNode.put(node, node); // 부모가 자신인 노드는 루트
         rank.put(node, 0);  // 초기 랭크는 0
     }
+
 
     public ArrayList<Edge> kruskalFunc(ArrayList<String> vetices, ArrayList<Edge> edgeds) {
         ArrayList<Edge> list = new ArrayList<>();
