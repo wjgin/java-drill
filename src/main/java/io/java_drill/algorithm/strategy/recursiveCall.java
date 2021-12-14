@@ -1,4 +1,4 @@
-package io.java_drill.recursiveCall;
+package io.java_drill.algorithm.strategy;
 
 import java.util.ArrayList;
 import java.util.List;

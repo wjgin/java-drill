@@ -1,4 +1,4 @@
-package io.java_drill.search;
+package io.java_drill.algorithm.search;
 
 import java.util.*;
 

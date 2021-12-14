@@ -1,6 +1,5 @@
-package io.java_drill.search.graph;
+package io.java_drill.algorithm.search.graph;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 

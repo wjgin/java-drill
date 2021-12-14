@@ -1,6 +1,4 @@
-package io.java_drill.DP;
-
-import javax.swing.plaf.metal.MetalLookAndFeel;
+package io.java_drill.algorithm.strategy;
 
 public class DynamicProgramming {
     // 피보나치 수열 재귀함수로 구현
