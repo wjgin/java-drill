@@ -1,4 +1,4 @@
-package io.java_drill.algorithm.search;
+package io.java_drill.algorithm.search.binary;
 
 import java.util.ArrayList;
 
