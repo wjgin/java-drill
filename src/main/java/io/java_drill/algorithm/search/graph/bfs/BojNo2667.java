@@ -1,4 +1,4 @@
-package io.java_drill.algorithm.search.graph;
+package io.java_drill.algorithm.search.graph.bfs;
 
 import java.io.BufferedReader;
 import java.io.IOException;
