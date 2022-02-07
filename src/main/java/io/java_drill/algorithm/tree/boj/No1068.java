@@ -7,7 +7,13 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class No1068 {
-
+    /**
+     * subtree 개념을 활용한 문제
+     * 작은 문제 해결 -> 큰 문제 해결
+     * leaf의 개수를 세는 문제
+     * 자식의 부모는 자식의 결과를 더 하면 답을 구할 수 있다. -> dfs로 최종 자식의 결과를 확인
+     * 깊이우선탐색으로 자식이 없다면 leaf 이므로 1 -> 자식의 탐색이 끝난 후 그 부모는 자식의 값을 모두 더 함
+     */
     static int[] leafCnt;
     static ArrayList<Integer>[] tree;
     static int N, root, targetNode;
